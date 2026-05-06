@@ -1,0 +1,32 @@
+<header class="header">
+  <img src="/static/images/hsi.webp" class="logo" alt="SMA IT HSI PURWOREJO" />
+  <h1>HSI Boarding School Purworejo</h1>
+  <h4>14 September 2025</h4>
+</header>
+
+<nav>
+  <a href="{% url 'home' %}" 
+     class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+    Beranda
+  </a>
+
+  <a href="{% url 'biodata' %}" 
+     class="{% if request.resolver_match.url_name == 'biodata' %}active{% endif %}">
+    Biodata
+  </a>
+
+  <a href="{% url 'galeri' %}" 
+     class="{% if request.resolver_match.url_name == 'galeri' %}active{% endif %}">
+    Galeri
+  </a>
+
+  <a href="{% url 'jadwal' %}" 
+     class="{% if request.resolver_match.url_name == 'jadwal' %}active{% endif %}">
+    Jadwal
+  </a>
+
+  <a href="{% url 'feedback' %}" 
+     class="{% if request.resolver_match.url_name == 'feedback' %}active{% endif %}">
+    Feedback
+  </a>
+</nav>

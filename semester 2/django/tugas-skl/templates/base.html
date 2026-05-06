@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block page_title %} Website Profil Santri {% endblock %}</title>
+   <link rel="stylesheet" href="{% static 'style.css' %}?v=99999" />
+  </head>
+  <body>
+    <div class="container">
+      {% include 'header.html' %}
+      
+      <main>{% block content %}{% endblock %}</main>
+
+      <div class="footer">
+        <p>
+          &copy; 2025 Karim Sajid Mumtazan | kontak: karimmumtazan@gmail.com
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+

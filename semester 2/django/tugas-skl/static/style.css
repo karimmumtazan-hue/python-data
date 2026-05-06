@@ -1,0 +1,309 @@
+/* ========= variable untuk warna ============= */
+:root {
+  --bg-bdy:#000000;
+  --bg-con: #000a1f;
+  --bx-shd: rgba(0, 0, 0, 0.1);
+  --clr: #cfd2d7;
+}
+/* ========== STYLE DASAR (Mobile First) ========== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-bdy);
+  color: var(--clr);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--bg-con);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px var(--bx-shd);
+  border: 1px solid #374151;
+}
+
+/* ========== HEADER & NAVIGATION (FLEXBOX) ========== */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #c8c8c8;
+  padding-bottom: 20px;
+}
+
+.header img.logo {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #0040ff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #3161ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 22px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #ffc401;
+  color: rgb(0, 72, 255);
+}
+
+/* ========== BOX & TEKS ========== */
+.box {
+  background-color: #111827;
+  border: 1px solid #595959;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+.box-title {
+  font-size: 1.4em;
+  color: #0040ff;
+  border-left: 5px solid #ffcc00;
+  padding-left: 15px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* ========== GAMBAR ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #0040ff;
+}
+
+/* ========== GALERI (FLEXBOX GRID) ========== */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery-item {
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  transition: transform 0.2s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* ========== TABEL ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #9e9e9e;
+  padding: 10px;
+  text-align: left;
+}
+
+thead {
+  background-color: #001353;
+  color: white;
+}
+
+/* Tabel scrollable di mobile */
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* ========== FORM ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  background-color: #1a1d2d;
+  color: #e5e7eb;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  background-color: #3161ff;
+  color: #fff;
+}
+
+button[type="reset"] {
+  background-color: #2d2f3f;
+  color: #e5e7eb;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* ========== MEDIA QUERY: TABLET (600–1023px) ========== */
+@media (max-width: 599px) {
+  nav  {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  nav a{
+    width: 90%;
+    border: 1px solid #9e9e9e;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  nav {
+    justify-content: space-evenly;
+  }
+
+  nav a {
+    border: 1px solid #9e9e9e;
+  }
+
+  .gallery-item {
+    flex: 1 1 45%;
+  }
+
+  .biodata-layout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .form-group {
+    flex: 1 1 48%;
+  }
+
+  textarea {
+    flex: 1 1 100%;
+  }
+}
+
+/* ========== MEDIA QUERY: DESKTOP (≥1024px) ========== */
+@media (min-width: 1024px) {
+  nav {
+    justify-content: space-evenly;
+  }
+
+  nav a {
+    border: 1px solid #9e9e9e;
+  }
+
+  .gallery-item {
+    flex: 1 1 22%;
+  }
+
+  .biodata-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .biodata-layout .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .form-group {
+    flex: 1 1 45%;
+  }
+
+  textarea {
+    flex: 1 1 100%;
+  }
+}
+/* ======== Jadwal Table Wrapper (tengah & responsif) ======== */
+.table-wrapper {
+  display: flex;
+  justify-content: center; /* tabel di tengah */
+  overflow-x: auto; /* bisa digeser di layar kecil */
+}
+
+.table-wrapper table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table-wrapper th, .table-wrapper td {
+  text-align: center;
+}

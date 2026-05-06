@@ -1,0 +1,43 @@
+{% extends 'base.html' %}  
+<!-- extends untuk menggunakan template -->
+
+<!-- isikan block per nama nya -->
+{% block page_title %} Beranda {% endblock %}
+<!-- sisakan isi <main> aja -->
+{% block content %}
+ <h1>⚔️ Welcome to Mobile Legends ⚔️</h1>
+        <p>Pilih Role (Peran) Hero yang akan kamu mainkan. Klik pada kartu di bawah ini!</p>
+
+        <div class="role-container">
+            <div class="role-card" onclick="gantiInfo('🥷 ASSASSIN', 'Tugas Utama: Jungler.<br>Fokus farming monster hutan dan sergap hero lawan yang darahnya tipis (Mage/Marksman).')">
+                <div class="emoji">🥷</div>
+                <div class="role-name">Assassin</div>
+            </div>
+            
+            <div class="role-card" onclick="gantiInfo('🏹 MARKSMAN', 'Tugas Utama: Gold Laner.<br>Fokus cari uang (gold) di awal game agar damage seranganmu mematikan di akhir game (Late Game).')">
+                <div class="emoji">🏹</div>
+                <div class="role-name">Marksman</div>
+            </div>
+
+            <div class="role-card" onclick="gantiInfo('🔮 MAGE', 'Tugas Utama: Mid Laner.<br>Kuasai area tengah dan bantu rotasi teman ke atas (Top) atau bawah (Bottom) dengan magic damage area.')">
+                <div class="emoji">🔮</div>
+                <div class="role-name">Mage</div>
+            </div>
+
+            <div class="role-card" onclick="gantiInfo('🛡️ TANK', 'Tugas Utama: Roamer.<br>Lindungi teman satu tim, buka map, dan jadilah tameng (inisiator) saat terjadi pertarungan besar (Team Fight).')">
+                <div class="emoji">🛡️</div>
+                <div class="role-name">Tank</div>
+            </div>
+
+            <div class="role-card" onclick="gantiInfo('⚔️ FIGHTER', 'Tugas Utama: EXP Laner.<br>Bertahanlah di jalur EXP untuk cepat naik level dan hancurkan turret lawan.')">
+                <div class="emoji">⚔️</div>
+                <div class="role-name">Fighter</div>
+            </div>
+        </div>
+
+        <div id="info-box">
+            Silakan klik salah satu role di atas untuk melihat detail tugasnya di sini.
+        </div>
+
+         <a href="/" class="btn-back">⬅️ Kembali ke Nexus Portal</a>
+{% endblock %}
