@@ -56,7 +56,7 @@ def siswa_create(request):
         nama = request.POST.get('nama', '').strip()
         umur = request.POST.get('umur', '').strip()
         tgl_lahir = request.POST.get('tanggal_lahir', '').strip()
-        sts_hdr = request.POST.get('status_hadir', '').strip() == 'Hadir'
+        sts_hdr = request.POST.get('status_hadir', '').strip() == 'hadir'
         nlai_akhr = request.POST.get('nilai_akhir', '').strip()
 
         # eksekusi query insert ke tabel siswa
@@ -66,7 +66,7 @@ def siswa_create(request):
                 INSERT INTO siswa (nama, umur, tanggal_lahir, status_hadir, nilai_akhir)
                 VALUES (%s, %s, %s, %s, %s)
                 """,
-                [nama, umur, tgl_lahir, sts_hdr, nlai_akhr]
+                [nama, umur, tanggal_lahir, status_hadir, nilai_akhir]
             )
 
         # klo berhasil maka redirect ke siswa list
